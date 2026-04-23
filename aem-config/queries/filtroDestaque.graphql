@@ -1,0 +1,11 @@
+{
+  bootcampFormList(filter: {
+		destaque: { _expressions: [{value: true}]}    
+  }) {
+    items {
+      titulo
+      preco
+      categoria
+    }
+  }
+}

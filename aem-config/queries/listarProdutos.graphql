@@ -1,0 +1,21 @@
+{
+  bootcampFormList {
+    items{
+      titulo
+      preco
+      categoria
+      destaque
+      stackTecnologico
+      descricao{
+        plaintext
+      }
+      imagem{
+        ... on ImageRef {
+          _path
+          width
+          height
+        }
+      }
+    }
+  }
+}

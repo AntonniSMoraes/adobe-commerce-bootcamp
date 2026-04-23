@@ -1,0 +1,13 @@
+<?php
+/** @var \Bootcamp\AemContent\Block\AemBanner $block */
+$content = $block->getAemContent();
+?>
+<div class="aem-banner" style="background: linear-gradient(135deg, #1a73e8, #203748); color: white; padding: 2rem; text-align: center; border-radius: 8px; margin: 1rem 0;">
+    <h2><?= $block->escapeHtml($content['title']) ?></h2>
+    <p><?= $block->escapeHtml($content['text']) ?></p>
+    <?php if ($content['success']): ?>
+        <small style="opacity: 0.8;">Conteúdo gerenciado via AEM (Live)</small>
+    <?php else: ?>
+        <small style="opacity: 0.8;">Conteúdo padrão (AEM Offline)</small>
+    <?php endif; ?>
+</div>

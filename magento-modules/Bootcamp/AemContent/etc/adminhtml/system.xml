@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bootcamp" translate="label" sortOrder="10">
+            <label>Bootcamp 2026</label>
+        </tab>
+        <section id="aem_integration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Integração AEM</label>
+            <tab>bootcamp</tab>
+            <resource>Bootcamp_AemContent::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Configurações Gerais</label>
+                <field id="aem_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL do Experience Fragment (JSON)</label>
+                    <comment>Ex: http://localhost:4502/content/experience-fragments/wknd/.../master.model.json</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
