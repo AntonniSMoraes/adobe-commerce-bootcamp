@@ -56,17 +56,13 @@ Localizados na pasta `/aem-config`, os artefatos demonstram a flexibilidade do A
 ## Instalação dos módulos magento
 * Mova a pasta bootcamp para app/code/ e execute os comandos no terminal:
 
--  Habilitar os módulos
-bin/magento module:enable Bootcamp_CatalogApi Bootcamp_AemContent
+Habilitar os módulos: bin/magento module:enable Bootcamp_CatalogApi Bootcamp_AemContent
 
--  Atualizar o esquema do banco de dados e registros
-bin/magento setup:upgrade
+Atualizar o esquema do banco de dados e registros: bin/magento setup:upgrade
 
--  Compilar as dependências (necessário em modo produção ou default)
-bin/magento setup:di:compile
+Compilar as dependências (necessário em modo produção ou default): bin/magento setup:di:compile
 
--  Limpar o cache
-bin/magento cache:flush
+Limpar o cache: bin/magento cache:flush
 
 ## Configuração do Endpoint AEM (Módulo AemContent)
 * Para que o Magento consiga consumir o banner AEM, configure o URL do Sling Model Exporter no painel administrativo:
