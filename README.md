@@ -1,10 +1,10 @@
-#Adobe Commerce Bootcamp 2026 - Artefatos Backend
+## Adobe Commerce Bootcamp 2026 - Artefatos Backend
 **Integração e Orquestração: Magento + AEM**
 
-##Objetivo
+## Objetivo
 Este repositório centraliza os artefatos de backend e as configurações de infraestrutura para o projeto de **Composable Commerce**. O foco aqui é a entrega de dados estruturados e conteúdo gerenciado para um storefront headless.
 
-##Arquitetura de Integração
+## Arquitetura de Integração
 O projeto utiliza o Hydrogen como hub central, mas a inteligência do catálogo e do conteúdo reside nestes artefatos:
 
 - **Adobe Commerce (Magento):** Provedor de dados transacionais e catálogo técnico.
@@ -12,7 +12,7 @@ O projeto utiliza o Hydrogen como hub central, mas a inteligência do catálogo 
 
 ---
 
-##Artefatos Magento (Adobe Commerce)
+## Artefatos Magento (Adobe Commerce)
 Localizados na pasta `/magento-modules`, os módulos customizados resolvem desafios específicos de integração:
 
 ### 1. `Bootcamp_CatalogApi` (Protocolo REST)
@@ -26,7 +26,7 @@ Localizados na pasta `/magento-modules`, os módulos customizados resolvem desaf
 
 ---
 
-## 📄 Artefatos AEM (Adobe Experience Manager)
+## Artefatos AEM (Adobe Experience Manager)
 Localizados na pasta `/aem-config`, os artefatos demonstram a flexibilidade do AEM como CMS Headless:
 
 ### 1. Content Fragment Models
@@ -38,7 +38,7 @@ Localizados na pasta `/aem-config`, os artefatos demonstram a flexibilidade do A
 
 ---
 
-## 🌐 Mapeamento Técnico de Endpoints
+## Mapeamento Técnico de Endpoints
 
 | Serviço | Protocolo | Método | Finalidade |
 | :--- | :--- | :--- | :--- |
@@ -48,7 +48,27 @@ Localizados na pasta `/aem-config`, os artefatos demonstram a flexibilidade do A
 
 ---
 
-## 📂 Estrutura do Repositório
+## Estrutura do Repositório
 * `/magento-modules`: Código fonte PHP dos módulos `CatalogApi` e `AemContent`.
 * `/aem-config`: Definições de modelos e arquivos `.graphql` persistidos.
 ---
+
+## Instalação dos módulos magento
+* Mova a pasta bootcamp para app/code/ e execute os comandos no terminal:
+# Habilitar os módulos
+bin/magento module:enable Bootcamp_CatalogApi Bootcamp_AemContent
+
+# Atualizar o esquema do banco de dados e registros
+bin/magento setup:upgrade
+
+# Compilar as dependências (necessário em modo produção ou default)
+bin/magento setup:di:compile
+
+# Limpar o cache
+bin/magento cache:flush
+
+## Configuração do Endpoint AEM (Módulo AemContent)
+* Para que o Magento consiga consumir o banner AEM, configure o URL do Sling Model Exporter no painel administrativo:
+-  Vá em: Stores > Configuration > Bootcamp > AEM Integration
+-  Insira o endpoint. ex: http://localhost:4502/content/dam/bootcamp/banner-home.model.json
+
